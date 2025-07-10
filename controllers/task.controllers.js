@@ -30,7 +30,7 @@ export const getAllTask = (req, res) => {
 
   /*CREACION DE FUNCIONALIDAD*/
   if(1 < idlevel || idlevel > 5){
-    return res.status(200).json({ message: 'fuera de rango' });
+    return res.status(404).json({ message: 'fuera de rango' });
   }
   return res.status(200).json(allTasks);
 };
