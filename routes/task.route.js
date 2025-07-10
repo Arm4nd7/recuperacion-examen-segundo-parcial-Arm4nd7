@@ -1,10 +1,31 @@
 import { Router } from "express";
-import { getAllTask } from "../controllers/task.controllers.js"
+import {
+  getAllTask,
+  getOneTask,    
+  postOneTask,   
+  updateOneTask,
+  deleteOneTask,
+  getSummary     
+} from "../controllers/task.controllers.js"; 
 
-const route = Router()
+const route = Router();
 
-route.get('/tasks', getAllTask  )
-route.get('/tasks/:id', getAllTask  )
+route.get('/tasks', getAllTask);
+
+route.get('/tasks', getAllTask);
+
+route.get('/tasks/priority/:level', getAllTask);
 
 
-export default route
+route.post('/tasks', postOneTask);
+
+route.put('/tasks/:id', updateOneTask);
+
+route.delete('/tasks/:id', deleteOneTask);
+
+route.get('/tasks/summary', getSummary);
+
+route.get('/tasks/:id', getOneTask);
+
+
+export default route;
